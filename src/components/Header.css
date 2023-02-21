@@ -1,0 +1,19 @@
+.header{
+    background-color: var(--secondary-color);
+ 
+    padding:1em 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo{
+    color:var(--font-primary);
+
+}
+
+.searchInput{
+    width:200;
+    height:5vh;
+}
