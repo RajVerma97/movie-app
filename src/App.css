@@ -1,8 +1,21 @@
 :root{
-  --primary-color:#090e13;
-  --secondary-color:#18212a;
-  --font-primary:#fff;
-  --font-secondary:#73b5f3;
+
+  --header-bg-clr:#2892D7;
+  --sidebar-bg-clr:#181823;
+  --sidebar-btn-bg-clr:white;
+  --sidebar-btn-text-clr:#181823;
+  --logo-text-clr:#fff;
+  --search-bg-clr:#fff;
+  --searchIcon-clr:lightslategrey;
+  --seeMore-btn-border-clr:none;
+  --seeMore-btn-bg-clr:#F2DF3A;
+  --seeMore-btn-text-clr:black;
+  --starIcon-clr:#F06543;
+  --genre-bg-clr:#F2DF3A;
+  --genre-text-clr:black;
+  --footer-bg-clr:#2892D7;
+  --footer-text-clr:white;
+
 }
 
 *{
@@ -11,13 +24,62 @@
   box-sizing: border-box;
 }
 
-/* a{
-  text-decoration: none;
-} */
+
 
 body{
   background-color: var(--font-primary);
+  font-family:'Roboto';
+}
+
+
+
+.App{
+  
+  overflow: hidden;
+  
 }
 .container{
-  margin:0 3em;
+  padding: 1.5em 0;
+  width:85%;
+ 
+  min-height:100vh;
+  margin:0 auto;
+
+}
+
+@media only screen and (max-width:900px) {
+.container {
+   padding:0;
+    width: 80%;
+    margin: 0 auto;
+
+  }
+}
+
+@media only screen and (max-width:700px) {
+  .parent {
+      display: block;
+  
+    }
+  .App {
+  width: 100vw;
+    float: none;
+ 
+
+  }
+  .closeIconBtn{
+  display:block !important;
+  margin-bottom: 2.5em !important;
+  color:white !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  }
+  .container {
+   padding:0 1em;
+    width: 95%;
+    margin: 0 auto;
+
+  }
+ 
+  
 }

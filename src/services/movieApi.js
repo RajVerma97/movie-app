@@ -72,7 +72,15 @@ export const movieApi = createApi({
     }),
     getSearchMovie: builder.query({
       query: (searchText) =>
-        `/search/multi?api_key=7f1847a367e90e40d7b16055a47b0f97&langauge=en-US&query=${searchText}`,
+        `/search/multi?api_key=${APIKEY}&language=en-US&query=${searchText}`,
+    }),
+    getMoviesByGenre: builder.query({
+      query: (genreId) =>
+        `/discover/movie?api_key=${APIKEY}&language=en-US&with_genres=${genreId}`,
+    }),
+    getTvByGenre: builder.query({
+      query: (genreId) =>
+        `/discover/tv?api_key=${APIKEY}&language=en-US&with_genres=${genreId}`,
     }),
   }),
 });
@@ -97,4 +105,7 @@ export const {
   useGetTvImagesQuery,
   useGetTvVideosQuery,
   useGetTvReviewsQuery,
+
+  useGetMoviesByGenreQuery,
+  useGetTvByGenreQuery,
 } = movieApi;

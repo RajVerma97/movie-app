@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
 const Footer = () => {
-  return <div className="footer">
-    
-    <div>Movie app</div>
-    <div> 02032 All rights reserved</div>
-  </div>;
+  return (
+    <div className="footer">
+      <h2> Powered by TMDB API</h2>
+    </div>
+  );
 };
 
 export default Footer;

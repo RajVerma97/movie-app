@@ -1,0 +1,152 @@
+.showcase__section {
+    margin-bottom: 2.5em;
+}
+
+.showcase__section__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.showcase__section__title {
+    font-size: 1.8em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.seeMoreBtn{
+background-color: var(--seeMore-btn-bg-clr);
+/* border:2px solid var(--seeMore-btn-border-clr); */
+color:var(--seeMore-btn-text-clr);
+ font-size:1.3em;
+ font-weight: 500;
+ padding:0.6em 1em;
+ border:none;
+ border-radius: 8px;
+}
+
+.seeMoreBtn:hover{
+    cursor:pointer;
+    /* background-color:black; */
+
+   
+    /* color:white; */
+    /* border:2px solid black; */
+    transform: scale(1.02);
+    transition: transform 0.1s ease-in;
+}
+
+@media only screen and (max-width:900px) {
+.seeMoreBtn {
+     
+        font-size: 1.2em;
+      
+        padding: 0.5em 0.8em;
+    }
+        .showcase__section {
+            margin-bottom: 0.5em;
+            padding:2em 1em;
+        }
+}
+
+@media only screen and (max-width:900px) {
+   
+
+    .showcase__section {
+        margin-bottom: 0.5em;
+        padding: 1em 1em;
+    }
+}
+
+
+
+@media only screen and (max-width:600px) {
+    .seeMoreBtn {
+
+        font-size: 1.2em;
+
+        padding: 0.4em 0.6em;
+    }
+   .showcase__section {
+       margin-bottom: 0.5em;
+       padding: 1.2em 0em;
+   }
+       
+}
+
+
+
+@media only screen and (max-width:500px) {
+    .showcase__section__title {
+        font-size: 1.5em;
+
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .showcase__section__title {
+        font-size: 1.5em !important;
+
+    }
+    .seeMoreBtn {
+
+        font-size: 1em;
+
+        padding: 0.4em 0.6em;
+    }
+}
+ 
+@media only screen and (max-width:400px) {
+  
+    .showcase__section__title {
+        font-size: 1.4em !important;
+
+    }
+         .seeMoreBtn {
+    
+             font-size: 0.9em;
+    
+             padding: 0.6em 0.8em;
+         }
+} 
+
+@media only screen and (max-width:350px) {
+    .showcase__section__title {
+        font-size: 1.2em !important;
+
+    }
+          .seeMoreBtn {
+    
+              font-size: 0.9em;
+    
+              padding: 0.3em 0.4em;
+          }
+}
+
+@media only screen and (max-width:300px) {
+    .showcase__section__title {
+        font-size: 1em !important;
+
+    }
+
+    .seeMoreBtn {
+
+        font-size: 0.9em;
+
+        padding: 0.2em 0.3em;
+    }
+}
+
+@media only screen and (max-width:250px) {
+    .showcase__section__title {
+        font-size: 0.9em !important;
+
+    }
+
+    .seeMoreBtn {
+
+        font-size: 0.8em;
+
+        padding: 0.1em 0.2em;
+    }
+}

@@ -1,19 +1,174 @@
 .header{
-    background-color: var(--secondary-color);
- 
-    padding:1em 4em;
+    background-color: var(--header-bg-clr);
+    padding:1.3em 0;
+    /* min-height:9vh;
+    max-height: 12vh;
+    height:10vh; */
+    /* height: 10vh; */
+   
+  
+   
+   
+
+}
+.navbar{
+    width:85%;
+   height:100%;
+    margin:0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
+.menuIcon{
+    margin-right:0.3em;
+    color:white;
+    font-size:1.2em !important;
 }
 
 .logo{
-    color:var(--font-primary);
+    color:var(--logo-text-clr);
+    font-size:1.5em;
+    font-weight:500;
+    text-transform:capitalize;
 
 }
 
-.searchInput{
-    width:200;
-    height:5vh;
+.searchForm{
+    background-color:var(--search-bg-clr);
+    border-radius:50px;
+    width:30%;
+    /* height:5vh; */
+    /* height:6vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0.4em 0.5em;
+    box-shadow: 2px 0px rgba(0,0,0,0.1);
+
 }
+
+
+.searchForm__icon{
+    
+    color:var(--searchIcon-clr);
+}
+.searchForm__input{
+    border:none;
+ 
+    background:none;
+    height: 100%;
+    width:100%;
+   min-height:5vh;
+    font-size:1em;
+    font-weight: 500;
+
+}
+
+.searchForm__input:focus{
+    border: none;
+    background: none;
+    outline:none;
+  
+}
+/* .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    position:fixed !important;
+    top:10vh;
+} */
+
+.css-10hburv-MuiTypography-root{
+    /* color:white !important; */
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    padding:1em;
+    width:15vw;
+    background-color:white !important;
+   
+}
+.menuItem{
+    margin-bottom:0.2em !important;
+    
+}
+.css-cveggr-MuiListItemIcon-root{
+    color:black !important;
+}
+ .css-cveggr-MuiListItemIcon-root:active{
+    color:white !important;
+ }
+.menuItem:hover{
+    /* background:#85CDFD !important; */
+   /* opacity:5; */
+    /* color:white !important; */
+}
+.active{
+    background: #6622CC !important;
+    color: white !important;
+}
+
+
+
+@media only screen and (max-width:900px){
+    
+    /* .navbar {
+        width: 80%;
+       
+     
+    } */
+}
+
+@media only screen and (max-width:700px) {
+
+    .header{
+        padding:0.8em 1em;
+     
+        
+       
+    }
+
+      
+      
+    .navbar{
+        width:95%;
+    }
+    .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+        
+        width: 30vw !important;
+    }
+   
+}
+
+@media only screen and (max-width:600px) {
+ 
+    .logo {
+        font-size: 1.4em;
+
+    }
+          .searchForm {
+    
+    
+            
+              height: 2.8em;
+              max-height: 5em;
+            
+    
+    
+    
+          }
+
+
+}
+
+@media only screen and (max-width:400px) {
+
+
+    .logo {
+        font-size: 1.2em;
+
+    }
+
+
+}
+
+
+

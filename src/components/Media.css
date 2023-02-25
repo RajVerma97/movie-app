@@ -1,0 +1,177 @@
+
+.showcase__movie {
+    display:block;
+    position:relative;
+
+    height: 65vh !important;
+}
+.showcase__content
+{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
+    opacity:0.9;
+    
+    
+}
+.showcase__movie__image {
+    width:100%;
+    height:100%;
+    display: block;
+}
+.showcase__movie__title{
+    font-size:1.5em !important;
+    font-weight: 400 !important;
+    color:black !important;
+
+}
+
+.showcase__movie__image:hover {
+    transform: scale(1.04);
+    transition: transform 0.01s ease-in-out;
+
+}
+
+
+
+
+
+
+.showcase__movie__title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: rgb(44, 35, 35);
+    text-decoration: none !important;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: clip;
+    opacity:1;
+
+}
+
+
+
+
+@media  only screen and  (max-width:1200px){
+.showcase__movie{
+    height:60vh !important;
+}
+.showcase__movie__title{
+    font-size:1.3em !important;
+  
+
+}
+}
+
+@media  only screen and  (max-width:1100px){
+.showcase__movie{
+    height:55vh !important;
+}
+.showcase__movie__title {
+    font-size: 1.3em !important;
+
+
+}
+}
+
+@media only screen and (max-width:1000px) {
+    .showcase__movie {
+        height: 50vh !important;
+    }
+        .showcase__movie__title {
+            font-size: 1.1em !important;
+    
+    
+        }
+}
+
+@media only screen and (max-width:900px) {
+    .showcase__movie {
+        height: 55vh !important;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .showcase__movie {
+        height: 50vh !important;
+    }
+}
+
+@media only screen and (max-width:680px) {
+    .showcase__movie {
+        height: 45vh !important;
+    }
+    .showcase__movie__title {
+        font-size: 1em !important;
+    
+    
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .showcase__movie {
+        height: 55vh !important;
+    }
+    .showcase__movie__title {
+            font-size: 1.3em !important;
+    
+    
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .showcase__movie {
+        height: 45vh !important;
+    }
+    .showcase__movie__title {
+             font-size: 1.1em !important;
+    
+    
+     }
+}
+@media only screen and (max-width:450px) {
+    .showcase__movie {
+        height: 40vh !important;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .showcase__movie {
+        height: 32vh !important;
+    }
+         .showcase__movie__title {
+             font-size: 1em !important;
+    
+    
+         }
+}
+
+@media only screen and (max-width:350px) {
+    .showcase__movie {
+        height: 35vh !important;
+    }
+   
+}
+@media only screen and (max-width:300px) {
+    .showcase__movie {
+        height: 30vh !important;
+    }
+}
+
+@media only screen and (max-width:250px) {
+    .showcase__movie {
+        height: 25vh !important;
+    }
+}
+@media only screen and (max-width:250px) {
+    .showcase__movie {
+        height: 20vh !important;
+    }
+}

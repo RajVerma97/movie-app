@@ -1,8 +1,12 @@
 .footer{
-    background-color: var(--secondary-color);
+
+    position:sticky;
+    width:100vw;
+    background-color: var(--footer-bg-clr);
     height:30vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:var(--font-primary);
+    color:var(--footer-text-clr);
+    margin-top:5em;
 }

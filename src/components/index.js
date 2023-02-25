@@ -5,4 +5,6 @@ export {default as MovieDetail} from "./MovieDetail";
 export {default as Search} from "./Search";
 export {default as Discover} from "./Discover";
 export {default as Explore} from "./Explore";
+export {default as NotFound} from "./NotFound";
 export {default as ScrollToTop} from "./ScrollToTop";
+export {default as Sidebar} from "./Sidebar";
