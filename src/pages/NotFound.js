@@ -1,11 +1,10 @@
-import React from "react";
 
 function NotFound() {
   return (
     <div
       style={{
         display: "flex",
-        flexDirection:'column',
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         padding: "1em",
@@ -16,11 +15,13 @@ function NotFound() {
       }}
     >
       <img
-        style={{width: "100%",marginBottom:'2em'}}
+        style={{width: "100%", marginBottom: "2em"}}
         src={"../assets/404 not found.svg"}
-          />
-          
-      <h2  style={{color:'red'}}>page not found!!</h2>
+        alt=""
+        loading='lazy'
+      />
+
+      <h2 style={{color: "red"}}>page not found!!</h2>
     </div>
   );
 }

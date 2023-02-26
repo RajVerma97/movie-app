@@ -1,10 +1,11 @@
 import React from "react";
+import {memo} from "react";
 
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 
 import {useNavigate} from "react-router-dom";
 
-import {IconButton} from "@mui/material";
+import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import TvIcon from "@mui/icons-material/Tv";
 import MovieIcon from "@mui/icons-material/Movie";
@@ -15,6 +16,8 @@ import "./Sidebar.css";
 function Sidebar({isSidebarActive, setIsSidebarActive}) {
   const navigate = useNavigate();
   const sidebarRef = useRef(null);
+
+  const [active, setActive] = useState("home");
 
   useEffect(() => {
     let isMounted = true;
@@ -46,9 +49,15 @@ function Sidebar({isSidebarActive, setIsSidebarActive}) {
       </IconButton>
       <button
         href="/"
+        style={
+          active === "home"
+            ? {backgroundColor: "#F9F54B", color: "black"}
+            : null
+        }
         onClick={() => {
           navigate("/");
           setIsSidebarActive(false);
+          setActive("home");
         }}
         className="sidebar-btn"
       >
@@ -56,9 +65,15 @@ function Sidebar({isSidebarActive, setIsSidebarActive}) {
         <span> home</span>
       </button>
       <button
+        style={
+          active === "movie"
+            ? {backgroundColor: "#F9F54B", color: "black"}
+            : null
+        }
         onClick={() => {
           navigate("/explore/movie");
           setIsSidebarActive(false);
+          setActive("movie");
         }}
         className="sidebar-btn"
       >
@@ -66,9 +81,13 @@ function Sidebar({isSidebarActive, setIsSidebarActive}) {
         movie
       </button>
       <button
+        style={
+          active === "tv" ? {backgroundColor: "#F9F54B", color: "black"} : null
+        }
         onClick={() => {
           navigate("/explore/tv");
           setIsSidebarActive(false);
+          setActive("tv");
         }}
         className="sidebar-btn"
       >
@@ -79,4 +98,4 @@ function Sidebar({isSidebarActive, setIsSidebarActive}) {
   );
 }
 
-export default Sidebar;
+export default memo(Sidebar);

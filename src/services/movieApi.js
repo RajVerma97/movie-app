@@ -1,5 +1,8 @@
-import {APIKEY} from "./MovieApiKey";
+// import {APIKEY} from "./MovieApiKey";
+
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+
+const APIKEY = process.env.REACT_APP_API_KEY;
 
 const createRequest = (url) => url + "?api_key=" + APIKEY;
 export const movieApi = createApi({

@@ -1,24 +1,25 @@
-import React from "react";
+import {lazy, Suspense} from "react";
 import {useParams} from "react-router-dom";
 import {useGetSearchMovieQuery} from "../services/movieApi";
-import {Grid, Skeleton, CircularProgress} from "@mui/material";
-import BackArrow from "./BackArrow";
-import Media from "./Media";
+import Grid from "@mui/material/Grid";
+import Skeleton from "@mui/material/Skeleton";
+import CircularProgress from "@mui/material/CircularProgress";
+
+const BackArrow = lazy(() => import("../components/BackArrow"));
+const Media = lazy(() => import("../components/Media"));
 
 const Search = () => {
   const {query} = useParams();
   const {data, isFetching: isSearching} = useGetSearchMovieQuery(query);
   const response = data?.results;
 
-  const filteredArr = response?.filter((elem) => {
-    if (elem.poster_path) {
-      return elem;
-    }
-  });
+  const filteredArr = response?.filter((elem) => elem.poster_path);
 
   return (
     <div style={{display: "grid"}}>
-      <BackArrow />
+      <Suspense>
+        <BackArrow />
+      </Suspense>
 
       {isSearching ? (
         <CircularProgress
@@ -41,6 +42,7 @@ const Search = () => {
           }}
         >
           <img
+            loading="lazy"
             alt=""
             src="../assets/tryAgain.svg"
             style={{width: "100%", marginBottom: "2em"}}
@@ -59,7 +61,9 @@ const Search = () => {
               {isSearching ? (
                 <Skeleton variant="rectangular" width={"100%"} height={300} />
               ) : (
-                <Media media={media} mediaType={media?.media_type} />
+                <Suspense>
+                  <Media media={media} mediaType={media?.media_type} />
+                </Suspense>
               )}
             </Grid>
           );

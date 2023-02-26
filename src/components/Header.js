@@ -1,27 +1,35 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useRef, memo, useCallback} from "react";
 import {Link} from "react-router-dom";
 import "./Header.css";
 import {useNavigate} from "react-router-dom";
-import {IconButton} from "@mui/material";
+import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Header = ({isSidebarActive, setIsSidebarActive}) => {
-  const [searchText, setSearchText] = useState("");
-  const [variant, setVariant] = useState("temporary");
-  const logoRef = useRef(null);
-  const formRef = useRef(null);
-  const inputRef = useRef(null);
-  const navigate = useNavigate();
-  const width = window.innerWidth;
+  const logoRef = useRef();
+  const formRef = useRef();
+  const inputRef = useRef();
+  const windowWidth = window.innerWidth;
 
-  useEffect(() => {
-    if (width > 700) {
-      setVariant("permanent");
-    } else {
-      setVariant("temporary");
-    }
-  }, [width]);
+  const navigate = useNavigate();
+
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (windowWidth < 700) {
+        logoRef.current.style.display = "block";
+        formRef.current.style.width = "30%";
+      }
+
+      inputRef.current.blur();
+      const searchText = inputRef.current.value;
+      navigate("/search/" + searchText);
+      inputRef.current.value = "";
+      // setSearchText("");
+    },
+    [inputRef, navigate, windowWidth]
+  );
 
   return (
     <div>
@@ -33,7 +41,7 @@ const Header = ({isSidebarActive, setIsSidebarActive}) => {
                 onClick={() => {
                   setIsSidebarActive(true);
                   // appRef.current.style.position = "fixed";
-                  document.body.style.position = 'fixed';
+                  document.body.style.position = "fixed";
                 }}
               >
                 <MenuIcon className="menuIcon" />
@@ -51,20 +59,9 @@ const Header = ({isSidebarActive, setIsSidebarActive}) => {
           </div>
 
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (variant === "temporary") {
-                logoRef.current.style.display = "block";
-                formRef.current.style.width = "30%";
-              }
-
-              inputRef.current.blur();
-
-              navigate("/search/" + searchText);
-              setSearchText("");
-            }}
+            onSubmit={onSubmit}
             onFocus={() => {
-              if (variant === "temporary") {
+              if (windowWidth < 700) {
                 logoRef.current.style.display = "none";
                 formRef.current.style.width = "80%";
               }
@@ -77,16 +74,13 @@ const Header = ({isSidebarActive, setIsSidebarActive}) => {
             <input
               className="searchForm__input"
               type="search"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
               ref={inputRef}
             ></input>
           </form>
         </div>
-       
       </div>
     </div>
   );
 };
 
-export default Header;
+export default memo(Header);

@@ -50,8 +50,9 @@
 
 .sidebar-btn:hover{
     cursor:pointer;
-    background-color:#F9F54B;
-    color:black;
+    /* background-color:lightslategray;
+    color:white; */
+    opacity: 0.9;
     transform:scale(1.01);
     transition: transform 0.1s ease-in-out;
 }

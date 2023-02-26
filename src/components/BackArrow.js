@@ -1,6 +1,5 @@
-import React from "react";
-import { ArrowBack } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
+import ArrowBack from '@mui/icons-material/ArrowBack';
+import IconButton from '@mui/material/IconButton'
 import { useNavigate} from "react-router-dom";
 
 const BackArrow = () => {

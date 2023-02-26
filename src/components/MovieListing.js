@@ -1,10 +1,8 @@
-import React, {useEffect} from "react";
-import {useState} from "react";
-
-
-import {Grid, Skeleton} from "@mui/material";
+import React, {useState, useEffect} from "react";
+import {memo} from "react";
+import Grid from "@mui/material/Grid";
+import Skeleton from "@mui/material/Skeleton";
 import Media from "./Media";
-
 
 const MovieListing = ({data, mediaType, isSimplified, isLoading}) => {
   // console.log(isFetching);
@@ -38,4 +36,4 @@ const MovieListing = ({data, mediaType, isSimplified, isLoading}) => {
   );
 };
 
-export default MovieListing;
+export default memo(MovieListing);

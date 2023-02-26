@@ -23,15 +23,16 @@ color:var(--seeMore-btn-text-clr);
  padding:0.6em 1em;
  border:none;
  border-radius: 8px;
+ box-sizing: border-box;
 }
 
 .seeMoreBtn:hover{
     cursor:pointer;
-    /* background-color:black; */
+   
+    opacity: 0.9;
 
    
-    /* color:white; */
-    /* border:2px solid black; */
+   
     transform: scale(1.02);
     transition: transform 0.1s ease-in;
 }

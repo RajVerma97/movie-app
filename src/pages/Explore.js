@@ -1,14 +1,15 @@
-import React from "react";
-import {useParams, useNavigate} from "react-router-dom";
+import {lazy, Suspense} from "react";
+import {useParams} from "react-router-dom";
+
 import {
   useGetMoviesByGenreQuery,
   useGetTvByGenreQuery,
 } from "../services/movieApi";
-import ShowcaseRow from "./ShowcaseRow";
+
+const ShowcaseRow = lazy(() => import("../components/ShowcaseRow"));
 
 const Explore = () => {
   const {mediaType} = useParams();
-  console.log(mediaType);
 
   const genres = [
     {id: 28, name: "Action"},
@@ -42,7 +43,6 @@ const Explore = () => {
 };
 
 function MoviePortal({genre, mediaType}) {
-
   const {data: response5, isFetching: isFetchingGenreMovies} =
     useGetMoviesByGenreQuery(genre.id);
 
@@ -52,12 +52,14 @@ function MoviePortal({genre, mediaType}) {
     <>
       {result?.length > 0 && (
         <>
-          <ShowcaseRow
-            title={genre.name}
-            mediaType={mediaType}
-            data={result}
-            isFetching={isFetchingGenreMovies}
-          />
+          <Suspense>
+            <ShowcaseRow
+              title={genre.name}
+              mediaType={mediaType}
+              data={result}
+              isFetching={isFetchingGenreMovies}
+            />
+          </Suspense>
         </>
       )}
     </>
@@ -65,7 +67,6 @@ function MoviePortal({genre, mediaType}) {
 }
 
 function TvPortal({genre, mediaType}) {
-
   const {data: response5, isFetching: isFetchingGenreMovies} =
     useGetTvByGenreQuery(genre.id);
 
@@ -74,7 +75,13 @@ function TvPortal({genre, mediaType}) {
     <div>
       {result?.length > 0 && (
         <>
-          <ShowcaseRow title={genre.name} mediaType={mediaType} data={result} />
+          <Suspense>
+            <ShowcaseRow
+              title={genre.name}
+              mediaType={mediaType}
+              data={result}
+            />
+          </Suspense>
         </>
       )}
     </div>

@@ -1,9 +1,10 @@
 import React from "react";
-import MovieListing from "./MovieListing";
 import {useState, useEffect} from "react";
-import {CircularProgress, Button, Skeleton} from "@mui/material";
+import {memo} from "react";
 
 import {useNavigate} from "react-router-dom";
+import Skeleton from "@mui/material/Skeleton";
+import MovieListing from "./MovieListing";
 
 import "./ShowcaseRow.css";
 
@@ -56,4 +57,4 @@ const ShowcaseRow = ({title, mediaType, data, isFetching}) => {
   );
 };
 
-export default ShowcaseRow;
+export default memo(ShowcaseRow);
